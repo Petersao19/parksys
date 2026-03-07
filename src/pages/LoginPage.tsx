@@ -1,23 +1,31 @@
 import { useState } from 'react'
+import { useAuthStore } from '../store/authStore'
+import { useNavigate } from 'react-router-dom'
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const navigate = useNavigate()
+  const { login } = useAuthStore()
 
-  const handleLogin = () => {
-    if (!email || !password) {
-      setError('Completa todos los campos')
-      return
-    }
-    // Por ahora simulamos — mañana conectamos con Zustand
-    if (email === 'admin@parking.com' && password === 'admin123') {
-      setError('')
-      alert('✅ Login correcto — mañana conectamos el router')
-    } else {
-      setError('Correo o contraseña incorrectos')
-    }
+ const handleLogin = () => {
+  if (!email || !password) {
+    setError('Completa todos los campos')
+    return
   }
+  // Simulamos el login — semana 4 conectamos con el backend real
+  if (email === 'admin@parking.com' && password === 'admin123') {
+    login(
+      { id: 1, name: 'Admin Principal', email, role: 'admin' },
+      'fake-jwt-token'   // semana 4 esto será el JWT real del backend
+    )
+    navigate('/dashboard')  // redirige al dashboard
+  } else {
+    setError('Correo o contraseña incorrectos')
+  }
+}
 
   return (
     <div className="min-h-screen bg-gray-950 flex items-center justify-center px-4">
