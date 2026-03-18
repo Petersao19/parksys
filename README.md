@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# ParkSys 🅿️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema de gestión de parqueadero desarrollado para un cliente real.
+Permite registrar vehículos, controlar entradas/salidas y generar reportes de ingresos.
 
-Currently, two official plugins are available:
+## 🚀 Demo en vivo
+> Próximamente
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Screenshots
 
-## React Compiler
+![Dashboard](screenshots/dashboard.png)
+![Vehículos](screenshots/vehiculos.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Stack tecnológico
 
-## Expanding the ESLint configuration
+| Tecnología | Uso |
+|-----------|-----|
+| React 18 + TypeScript | Frontend |
+| Vite | Bundler |
+| Tailwind CSS | Estilos |
+| Zustand | Estado global |
+| React Router DOM | Navegación |
+| React Hook Form | Formularios |
+| Recharts | Gráficos |
+| Node.js + Express | Backend (semana 4) |
+| SQL Server | Base de datos (semana 4) |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✅ Funcionalidades
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [x] Autenticación con JWT y roles (admin/user)
+- [x] Dashboard con KPIs en tiempo real
+- [x] Gestión de vehículos (CRUD completo)
+- [x] Registro de entradas y salidas
+- [x] Cálculo automático de tarifas por hora
+- [ ] Reportes mensuales con gráficos (semana 3)
+- [ ] Deploy en Vercel + Railway (semana 5)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ⚙️ Instalación local
+```bash
+git clone https://github.com/Petersao19/parksys.git
+cd parksys
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 👤 Credenciales de prueba
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Rol | Email | Contraseña |
+|-----|-------|-----------|
+| Admin | admin@parking.com | admin123 |
+| Usuario | user@parking.com | user123 |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Estructura del proyecto
 ```
+src/
+├── components/    # Componentes reutilizables
+├── pages/         # Páginas de la app
+├── store/         # Estado global (Zustand)
+├── hooks/         # Custom hooks
+├── services/      # Llamadas a la API
+├── types/         # Tipos TypeScript
+└── utils/         # Funciones utilitarias
+```
+
+## 📄 Licencia
+MIT
