@@ -9,7 +9,7 @@ Permite registrar vehículos, controlar entradas/salidas y generar reportes de i
 ## 📸 Screenshots
 
 ![Dashboard](screenshots/dashboard.png)
-![Vehículos](screenshots/vehicles.png)
+![Vehículos](screenshots/vehiculos.png)
 
 ## 🛠️ Stack tecnológico
 
