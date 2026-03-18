@@ -5,7 +5,7 @@ import DashboardPage from "./pages/DashboardPage";
 import DashboardLayout from "./components/DashboardLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-import VehiclesPage from "./pages/VehiclesPage";
+import VehiclesPage from "./pages/VehiclePage";
 
 function App() {
   return (
@@ -23,12 +23,14 @@ function App() {
             </ProtectedRoute>
           }
         >
-          {/* RURTASSSS Páginas hijas — se renderizan en el Outlet */}
+          {/* RUTASSSS Páginas hijas — se renderizan en el Outlet */}
           <Route path="dashboard" element={<DashboardPage />} />
-
           <Route path="vehicles" element={<VehiclesPage />} />
-
           <Route index element={<Navigate to="/dashboard" />} />
+          <Route path="active" element={<ComingSoon title="Activos" />} />
+          <Route path="reports" element={<ComingSoon title="Reportes" />} />
+          <Route path="settings" element={<ComingSoon title="Tarifas" />} />
+          <Route path="users" element={<ComingSoon title="Usuarios" />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/login" />} />
