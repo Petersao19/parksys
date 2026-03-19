@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import DashboardLayout from "./components/DashboardLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ActivePage from "./pages/ActivePage";
 
 import VehiclesPage from "./pages/VehiclePage";
 
@@ -24,6 +25,7 @@ function App() {
           }
         >
           {/* RUTASSSS Páginas hijas — se renderizan en el Outlet */}
+          <Route path="active" element={<ActivePage/>} />
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="vehicles" element={<VehiclesPage />} />
           <Route index element={<Navigate to="/dashboard" />} />
