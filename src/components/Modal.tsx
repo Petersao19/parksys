@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 interface ModalProps {
   isOpen: boolean       // controla si se muestra o no
@@ -23,14 +23,14 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
       />
 
       {/* Contenido del modal */}
-      <div className="relative z-10 w-full max-w-md bg-gray-900 border border-gray-700 rounded-2xl p-6 mx-4">
+      <div className="relative z-10 w-full max-w-md bg-white border border-gray-200 rounded-2xl p-6 mx-4">
 
         {/* Header con título y botón cerrar */}
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-white font-bold text-lg">{title}</h2>
+          <h2 className="text-gray-900 font-bold text-lg">{title}</h2>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-white transition-colors text-xl leading-none"
+            className="text-gray-500 hover:text-gray-900 transition-colors text-xl leading-none"
           >
             ✕
           </button>

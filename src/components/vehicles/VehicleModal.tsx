@@ -47,15 +47,15 @@ export default function VehicleModal({
   return (
     // Fondo oscuro semitransparente detrás del modal
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
-      <div className="bg-gray-800 rounded-xl w-full max-w-md shadow-2xl border border-gray-700">
+      <div className="bg-gray-50 rounded-xl w-full max-w-md shadow-2xl border  border-gray-200">
         {/* Header del modal */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-700">
-          <h2 className="text-white font-bold text-lg">
+        <div className="flex items-center justify-between p-6 border-b  border-gray-200">
+          <h2 className="text-gray-900 font-bold text-lg">
             {isEditing ? "Editar Vehículo" : "Nuevo Vehículo"}
           </h2>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-white transition-colors text-xl"
+            className="text-gray-400 hover:text-gray-900 transition-colors text-xl"
           >
             ✕
           </button>
@@ -69,7 +69,7 @@ export default function VehicleModal({
             <input
               {...register("placa", { required: "La placa es obligatoria" })}
               placeholder="Ej: ABC-1234"
-              className="w-full bg-gray-700 text-white rounded-lg px-4 py-2.5 border border-gray-600 focus:border-blue-500 focus:outline-none placeholder-gray-500 uppercase"
+              className="w-full bbg-gray-100 text-gray-900 rounded-lg px-4 py-2.5 border border-gray-600 focus:border-blue-500 focus:outline-none placeholder-gray-500 uppercase"
             />
             {errors.placa && (
               <p className="text-red-400 text-xs mt-1">{errors.placa.message}</p>
@@ -83,7 +83,7 @@ export default function VehicleModal({
               <input
                 {...register("marca", { required: "Obligatorio" })}
                 placeholder="Ej: Toyota"
-                className="w-full bg-gray-700 text-white rounded-lg px-4 py-2.5 border border-gray-600 focus:border-blue-500 focus:outline-none placeholder-gray-500"
+                className="w-full bbg-gray-100 text-gray-900 rounded-lg px-4 py-2.5 border border-gray-600 focus:border-blue-500 focus:outline-none placeholder-gray-500"
               />
               {errors.marca && (
                 <p className="text-red-400 text-xs mt-1">{errors.marca.message}</p>
@@ -94,7 +94,7 @@ export default function VehicleModal({
               <input
                 {...register("modelo", { required: "Obligatorio" })}
                 placeholder="Ej: Corolla"
-                className="w-full bg-gray-700 text-white rounded-lg px-4 py-2.5 border border-gray-600 focus:border-blue-500 focus:outline-none placeholder-gray-500"
+                className="w-full bbg-gray-100 text-gray-900 rounded-lg px-4 py-2.5 border border-gray-600 focus:border-blue-500 focus:outline-none placeholder-gray-500"
               />
               {errors.modelo && (
                 <p className="text-red-400 text-xs mt-1">{errors.modelo.message}</p>
@@ -109,7 +109,7 @@ export default function VehicleModal({
               <input
                 {...register("color", { required: "Obligatorio" })}
                 placeholder="Ej: Blanco"
-                className="w-full bg-gray-700 text-white rounded-lg px-4 py-2.5 border border-gray-600 focus:border-blue-500 focus:outline-none placeholder-gray-500"
+                className="w-full bbg-gray-100 text-gray-900 rounded-lg px-4 py-2.5 border border-gray-600 focus:border-blue-500 focus:outline-none placeholder-gray-500"
               />
               {errors.color && (
                 <p className="text-red-400 text-xs mt-1">{errors.color.message}</p>
@@ -119,7 +119,7 @@ export default function VehicleModal({
               <label className="text-gray-400 text-sm mb-1 block">Tipo</label>
               <select
                 {...register("tipo")}
-                className="w-full bg-gray-700 text-white rounded-lg px-4 py-2.5 border border-gray-600 focus:border-blue-500 focus:outline-none"
+                className="w-full bbg-gray-100 text-gray-900 rounded-lg px-4 py-2.5 border border-gray-600 focus:border-blue-500 focus:outline-none"
               >
                 {VEHICLE_TYPES.map((t) => (
                   <option key={t.value} value={t.value}>
@@ -135,13 +135,13 @@ export default function VehicleModal({
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 bg-gray-700 hover:bg-gray-600 text-white rounded-lg py-2.5 font-medium transition-colors"
+              className="flex-1 bbg-gray-100 hover:bg-gray-600 text-gray-900 rounded-lg py-2.5 font-medium transition-colors"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="flex-1 bg-blue-600 hover:bg-blue-500 text-white rounded-lg py-2.5 font-medium transition-colors"
+              className="flex-1 bg-blue-600 hover:bg-blue-500 text-gray-900 rounded-lg py-2.5 font-medium transition-colors"
             >
               {isEditing ? "Guardar cambios" : "Registrar"}
             </button>

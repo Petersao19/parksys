@@ -18,11 +18,11 @@ export default function Table<T extends { id: number }>({
   emptyMessage = "No hay datos para mostrar",
 }: TableProps<T>) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-gray-800">
+    <div className="overflow-x-auto rounded-xl border  border-gray-200">
       <table className="w-full text-sm">
         {/* Encabezados */}
         <thead>
-          <tr className="border-b border-gray-800">
+          <tr className="border-b  border-gray-200">
             {columns.map((col) => (
               <th
                 key={String(col.key)}
@@ -50,7 +50,7 @@ export default function Table<T extends { id: number }>({
             data.map((row) => (
               <tr
                 key={row.id}
-                className="border-b border-gray-800/50 hover:bg-gray-800/30 transition-colors"
+                className="border-b  border-gray-200/50 hover:bg-gray-50/30 transition-colors"
               >
                 {columns.map((col) => (
                   <td key={String(col.key)} className="px-4 py-3 text-gray-300">

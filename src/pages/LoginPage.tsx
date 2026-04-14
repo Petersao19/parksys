@@ -34,14 +34,14 @@ export default function LoginPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <span className="text-white text-2xl font-bold">P</span>
+            <span className="text-gray-900 text-2xl font-bold">P</span>
           </div>
-          <h1 className="text-3xl font-bold text-white">ParkSys</h1>
+          <h1 className="text-3xl font-bold text-gray-900">ParkSys</h1>
           <p className="text-gray-400 mt-1 text-sm">Sistema de Gestión de Parqueadero</p>
         </div>
 
         {/* Card */}
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+        <div className="bg-white border  border-gray-200 rounded-2xl p-8">
 
           {/* Email */}
           <div className="mb-5">
@@ -53,7 +53,7 @@ export default function LoginPage() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               placeholder="admin@parking.com"
-              className="w-full bg-gray-950 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+              className="w-full bg-gray-950 border  border-gray-200 rounded-lg px-4 py-3 text-gray-900 text-sm placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
             />
           </div>
 
@@ -68,7 +68,7 @@ export default function LoginPage() {
               onChange={e => setPassword(e.target.value)}
               placeholder="••••••••"
               onKeyDown={e => e.key === 'Enter' && handleLogin()}
-              className="w-full bg-gray-950 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+              className="w-full bg-gray-950 border  border-gray-200 rounded-lg px-4 py-3 text-gray-900 text-sm placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
             />
           </div>
 
@@ -82,13 +82,13 @@ export default function LoginPage() {
           {/* Botón */}
           <button
             onClick={handleLogin}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors text-sm"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-gray-900 font-semibold py-3 rounded-lg transition-colors text-sm"
           >
             Iniciar Sesión
           </button>
 
           {/* Hint */}
-          <div className="mt-6 p-3 bg-gray-950 rounded-lg border border-gray-800">
+          <div className="mt-6 p-3 bg-gray-950 rounded-lg border  border-gray-200">
             <p className="text-xs text-gray-500 font-semibold mb-1">CUENTA DE PRUEBA:</p>
             <p className="text-xs text-gray-400">admin@parking.com / admin123</p>
           </div>

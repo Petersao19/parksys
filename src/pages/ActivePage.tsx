@@ -65,7 +65,7 @@ export default function ActivePage() {
     <div className="p-6 space-y-6">
       {/* Título */}
       <div>
-        <h1 className="text-white text-2xl font-bold">Activos</h1>
+        <h1 className="text-gray-900 text-2xl font-bold">Activos</h1>
         <p className="text-gray-400 text-sm mt-1">
           {activeRecords.length} vehículo{activeRecords.length !== 1 ? "s" : ""}{" "}
           en el parqueadero ahora
@@ -73,8 +73,8 @@ export default function ActivePage() {
       </div>
 
       {/* Formulario de entrada */}
-      <div className="bg-gray-800 rounded-xl p-5 border border-gray-700">
-        <h2 className="text-white font-semibold mb-4">Registrar Entrada</h2>
+      <div className="bg-gray-50 rounded-xl p-5 border  border-gray-200">
+        <h2 className="text-gray-900 font-semibold mb-4">Registrar Entrada</h2>
         <div className="flex gap-3">
           <input
             type="text"
@@ -85,7 +85,7 @@ export default function ActivePage() {
             }}
             onKeyDown={(e) => e.key === "Enter" && handleEntry()}
             placeholder="Ej: ABC-1234"
-            className="flex-1 bg-gray-900 text-white rounded-lg px-4 py-2.5 border border-gray-700 focus:border-blue-500 focus:outline-none placeholder-gray-500 font-mono uppercase"
+            className="flex-1 bg-white text-gray-900 rounded-lg px-4 py-2.5 border  border-gray-200 focus:border-blue-500 focus:outline-none placeholder-gray-500 font-mono uppercase"
           />
           <button
             onClick={handleEntry}
@@ -102,7 +102,7 @@ export default function ActivePage() {
       {activeRecords.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-16 text-center">
           <p className="text-4xl mb-3">🅿️</p>
-          <p className="text-white font-medium">Parqueadero vacío</p>
+          <p className="text-gray-900 font-medium">Parqueadero vacío</p>
           <p className="text-gray-500 text-sm mt-1">
             Registra la entrada de un vehículo
           </p>
@@ -112,7 +112,7 @@ export default function ActivePage() {
           {activeRecords.map((record:ParkingRecord) => (
             <div
               key={record.id}
-              className="bg-gray-800 rounded-xl p-5 border border-gray-700 flex items-center justify-between"
+              className="bg-gray-50 rounded-xl p-5 border  border-gray-200 flex items-center justify-between"
             >
               <div className="flex items-center gap-4">
                 {/* Icono por tipo */}
@@ -124,7 +124,7 @@ export default function ActivePage() {
                       : "🚛"}
                 </div>
                 <div>
-                  <p className="text-white font-mono font-bold text-lg">
+                  <p className="text-gray-900 font-mono font-bold text-lg">
                     {record.placa}
                   </p>
                   <p className="text-gray-400 text-sm capitalize">
@@ -143,7 +143,7 @@ export default function ActivePage() {
               {/* Botón de salida */}
               <button
                 onClick={() => setExitId(record.id)}
-                className="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+                className="bg-green-600 hover:bg-green-500 text-gray-900 px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
               >
                 Registrar Salida
               </button>
@@ -155,14 +155,14 @@ export default function ActivePage() {
       {/* Modal de confirmación de salida con cobro */}
       {exitId && recordToExit && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-800 rounded-xl p-6 max-w-sm w-full border border-gray-700">
+          <div className="bg-gray-50 rounded-xl p-6 max-w-sm w-full border  border-gray-200">
             <p className="text-4xl text-center mb-3">🏁</p>
-            <h3 className="text-white font-bold text-center text-lg">
+            <h3 className="text-gray-900 font-bold text-center text-lg">
               Confirmar Salida
             </h3>
             <p className="text-gray-400 text-sm text-center mt-2">
               ¿Registrar salida de{" "}
-              <span className="text-white font-mono font-bold">
+              <span className="text-gray-900 font-mono font-bold">
                 {recordToExit.placa}
               </span>
               ?
@@ -170,13 +170,13 @@ export default function ActivePage() {
             <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setExitId(null)}
-                className="flex-1 bg-gray-700 hover:bg-gray-600 text-white rounded-lg py-2.5 transition-colors"
+                className="flex-1 bbg-gray-100 hover:bg-gray-600 text-gray-900 rounded-lg py-2.5 transition-colors"
               >
                 Cancelar
               </button>
               <button
                 onClick={() => handleExit(exitId)}
-                className="flex-1 bg-green-600 hover:bg-green-500 text-white rounded-lg py-2.5 font-semibold transition-colors"
+                className="flex-1 bg-green-600 hover:bg-green-500 text-gray-900 rounded-lg py-2.5 font-semibold transition-colors"
               >
                 Confirmar salida
               </button>

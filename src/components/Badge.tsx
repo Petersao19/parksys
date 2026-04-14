@@ -4,7 +4,7 @@ const variants = {
   danger:  'bg-red-950  text-red-400  border-red-800',
   warning: 'bg-yellow-950 text-yellow-400 border-yellow-800',
   info:    'bg-blue-950 text-blue-400 border-blue-800',
-  gray:    'bg-gray-800 text-gray-400 border-gray-700',
+  gray:    'bg-gray-50 text-gray-400  border-gray-200',
 }
 
 interface BadgeProps {

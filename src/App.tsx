@@ -46,7 +46,7 @@ function ComingSoon({ title }: { title: string }) {
     <div className="flex items-center justify-center h-64">
       <div className="text-center">
         <p className="text-4xl mb-4">🚧</p>
-        <h2 className="text-white font-bold text-xl">{title}</h2>
+        <h2 className="text-gray-900 font-bold text-xl">{title}</h2>
         <p className="text-gray-500 text-sm mt-2">Próximamente — semana 2</p>
       </div>
     </div>

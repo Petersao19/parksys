@@ -15,9 +15,9 @@ export default function Sidebar() {
   const { user } = useAuthStore();
 
   return (
-    <aside className="w-64 min-h-screen bg-gray-900 border-r border-gray-800 flex flex-col">
+    <aside className="w-64 min-h-screen bg-blue-700 border-r border-blue-800 flex flex-col">
       {/* Logo arriba */}
-      <div className="p-6 border-b border-gray-800">
+      <div className="p-6 border-b border-gray-600">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center">
             <span className="text-white font-bold text-sm">P</span>
@@ -38,8 +38,8 @@ export default function Sidebar() {
             className={({ isActive }) =>
               `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
                 isActive
-                  ? "bg-blue-600 text-white font-semibold"
-                  : "text-gray-400 hover:bg-gray-800 hover:text-white"
+                  ? "bg-blue-600 text-gray-900 font-semibold"
+                  : "text-blue-200 hover:bg-blue-600 hover:text-white"
               }`
             }
           >
@@ -52,7 +52,7 @@ export default function Sidebar() {
         {user?.role === "admin" && (
           <>
             <div className="pt-4 pb-2">
-              <p className="text-xs text-gray-600 font-semibold tracking-wider px-3">
+              <p className="text-xs text-blue-300 font-semibold tracking-wider px-3">
                 ADMINISTRACIÓN
               </p>
             </div>
@@ -63,8 +63,8 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
                     isActive
-                      ? "bg-blue-600 text-white font-semibold"
-                      : "text-gray-400 hover:bg-gray-800 hover:text-white"
+                      ? "bg-blue-600 text-gray-900 font-semibold"
+                      : "text-blue-200 hover:bg-gray-50 hover:text-gray-900"
                   }`
                 }
               >
@@ -77,10 +77,10 @@ export default function Sidebar() {
       </nav>
 
       {/* Usuario abajo */}
-      <div className="p-4 border-t border-gray-800">
+      <div className="p-4 border-t border-gray-600">
         <div className="flex items-center gap-3 px-3 py-2">
           <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-            <span className="text-white text-xs font-bold">
+            <span className="text-gray-900 text-xs font-bold">
               {user?.name?.charAt(0).toUpperCase()}
             </span>
           </div>

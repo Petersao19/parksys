@@ -1,8 +1,8 @@
 // Variantes de color del botón
 const variants = {
-  primary:  'bg-blue-600 hover:bg-blue-700 text-white',
-  danger:   'bg-red-600  hover:bg-red-700  text-white',
-  ghost:    'bg-transparent hover:bg-gray-800 text-gray-400 hover:text-white border border-gray-700',
+  primary:  'bg-blue-600 hover:bg-blue-700 text-gray-900',
+  danger:   'bg-red-600  hover:bg-red-700  text-gray-900',
+  ghost:    'bg-transparent hover:bg-gray-50 text-gray-400 hover:text-gray-900 border  border-gray-200',
 }
 
 interface ButtonProps {
