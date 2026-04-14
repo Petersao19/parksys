@@ -1,44 +1,34 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
-import LoginPage from "./pages/LoginPage";
-import DashboardPage from "./pages/DashboardPage";
-import DashboardLayout from "./components/DashboardLayout";
-import ProtectedRoute from "./components/ProtectedRoute";
-import ActivePage from "./pages/ActivePage";
-
-import VehiclesPage from "./pages/VehiclePage";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import LoginPage from "./pages/LoginPage"
+import DashboardPage from "./pages/DashboardPage"
+import DashboardLayout from "./components/DashboardLayout"
+import ProtectedRoute from "./components/ProtectedRoute"
+import ActivePage from "./pages/ActivePage"
+import VehiclesPage from "./pages/VehiclePage"
+import ReportsPage from "./pages/ReportsPage"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Ruta pública */}
         <Route path="/login" element={<LoginPage />} />
-
-        {/* Rutas protegidas — todas usan el mismo layout */}
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <DashboardLayout />
-            </ProtectedRoute>
-          }
-        >
-          {/* RUTASSSS Páginas hijas — se renderizan en el Outlet */}
-          <Route path="active" element={<ActivePage/>} />
+        <Route path="/" element={
+          <ProtectedRoute>
+            <DashboardLayout />
+          </ProtectedRoute>
+        }>
+          <Route index element={<Navigate to="/dashboard" />} />
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="vehicles" element={<VehiclesPage />} />
-          <Route index element={<Navigate to="/dashboard" />} />
-          <Route path="active" element={<ComingSoon title="Activos" />} />
-          <Route path="reports" element={<ComingSoon title="Reportes" />} />
+          <Route path="active" element={<ActivePage />} />
+          <Route path="reports" element={<ReportsPage />} />
           <Route path="settings" element={<ComingSoon title="Tarifas" />} />
           <Route path="users" element={<ComingSoon title="Usuarios" />} />
         </Route>
-
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
 function ComingSoon({ title }: { title: string }) {
@@ -50,7 +40,7 @@ function ComingSoon({ title }: { title: string }) {
         <p className="text-gray-500 text-sm mt-2">Próximamente — semana 2</p>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
