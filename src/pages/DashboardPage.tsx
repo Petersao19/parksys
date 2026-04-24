@@ -34,30 +34,30 @@ export default function DashboardPage() {
       {/* Título de la página */}
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-        <p className="text-gray-400 text-sm mt-1">Resumen del día</p>
+        <p className="text-gray-600 text-sm mt-1">Resumen del día</p>
       </div>
 
       {/* 4 KPI Cards en grid */}
       <div className="grid grid-cols-2 gap-4">
         <Card>
-          <p className="text-gray-400 text-sm">Vehículos Activos</p>
+          <p className="text-gray-600 text-sm">Vehículos Activos</p>
           <p className="text-3xl font-bold text-gray-900 mt-1">2</p>
-          <p className="text-green-400 text-xs mt-1">↑ en el parqueadero ahora</p>
+          <p className="text-green-600 text-xs mt-1">↑ en el parqueadero ahora</p>
         </Card>
         <Card>
-          <p className="text-gray-400 text-sm">Ingresos Hoy</p>
+          <p className="text-gray-600  text-sm">Ingresos Hoy</p>
           <p className="text-3xl font-bold text-gray-900 mt-1">$12.50</p>
-          <p className="text-green-400 text-xs mt-1">↑ 3 vehículos atendidos</p>
+          <p className="text-green-600 text-xs mt-1">↑ 3 vehículos atendidos</p>
         </Card>
         <Card>
-          <p className="text-gray-400 text-sm">Total del Mes</p>
+          <p className="text-gray-600 text-sm">Total del Mes</p>
           <p className="text-3xl font-bold text-gray-900 mt-1">$284.00</p>
-          <p className="text-gray-400 text-xs mt-1">Marzo 2026</p>
+          <p className="text-gray-600 text-xs mt-1">Marzo 2026</p>
         </Card>
         <Card>
-          <p className="text-gray-400 text-sm">Vehículos Registrados</p>
+          <p className="text-gray-600 text-sm">Vehículos Registrados</p>
           <p className="text-3xl font-bold text-gray-900 mt-1">47</p>
-          <p className="text-gray-400 text-xs mt-1">en el sistema</p>
+          <p className="text-gray-600 text-xs mt-1">en el sistema</p>
         </Card>
       </div>
 

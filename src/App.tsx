@@ -6,6 +6,8 @@ import ProtectedRoute from "./components/ProtectedRoute"
 import ActivePage from "./pages/ActivePage"
 import VehiclesPage from "./pages/VehiclePage"
 import ReportsPage from "./pages/ReportsPage"
+import TarifasPage from "./pages/TarifasPage"
+import UsuariosPage from "./pages/UsuariosPage"
 
 function App() {
   return (
@@ -20,10 +22,12 @@ function App() {
           <Route index element={<Navigate to="/dashboard" />} />
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="vehicles" element={<VehiclesPage />} />
-          <Route path="active" element={<ActivePage />} />
+          <Route path="active" element={<ActivePage />} />          
           <Route path="reports" element={<ReportsPage />} />
-          <Route path="settings" element={<ComingSoon title="Tarifas" />} />
-          <Route path="users" element={<ComingSoon title="Usuarios" />} />
+          <Route path="settings" element={<TarifasPage />} />
+          
+          <Route path="users" element={<UsuariosPage />} />
+          
         </Route>
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
